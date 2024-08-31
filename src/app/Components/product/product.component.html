@@ -1,9 +1,9 @@
 <div class="container my-5">
-  <div class="row row-cols-5 g-3" >
+  <div class="row row-cols-5 g-3 " >
     @for (product of allProducts; track product.id) {
 
     <div class="col">
-      <div class="cardd bg-light">
+      <div class="cardd bg-light h-100">
         <a [routerLink]="['/prodetails',product.id]">
         <div class="imge">
           <div
@@ -20,11 +20,11 @@
         </a>
         <div class="content py-2 px-2">
           <div class="d-flex justify-content-between">
-            <h2>{{ product.title }}</h2>
+            <h2>{{ product.title.split(' ').slice(0,3).join(' ') }}</h2>
             <p>{{ product.price }}$</p>
           </div>
 
-          <p class="des">he Essence Mascara Lash Princess is</p>
+          <p class="des">{{product.description.split(' ').slice(0,8).join(' ') }}</p>
         </div>
         <button class="btn btn-outline-secondary">Add To Cart</button>
       </div>
